@@ -1,19 +1,13 @@
+
 import React from 'react';
-import './App.css';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-const Tittle = () => {
- // return (
-    // <div>
-    //  <h1>Hello :)</h1>
-    // </div>
-  // );
+ReactDOM.render(<App />, document.getElementById('root'));
 
-  return React.createElement(
-    "div",
-    null,
-    React.createElement("h1", null, "Hello Bren")
-  )
-}
-
-
-export default Tittle
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();

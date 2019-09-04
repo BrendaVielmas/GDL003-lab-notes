@@ -1,17 +1,12 @@
 import React, {Component} from 'react';
 import './index.css';
-import Greet from "./components/Greet"
-import Welcome from "./components/Welcome"
 import * as serviceWorker from './serviceWorker';
-import Tittle from "./components/Tittle"
 
-class App extends Comment {
+class App extends Component {
     render () {
         return (
             <div className="App">
-            {/* <Greet /> */ }
-            {/*<Welcome /> */}
-            <Hello/>
+            <p>hola</p>
             </div>
         );
     }
