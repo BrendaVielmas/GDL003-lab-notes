@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-//import * as serviceWorker from './serviceWorker';
-// import firebase from './Firebase';
-//import Auth from './Auth';
 import Login from './Login';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import HomeContainer from './HomeContainer';

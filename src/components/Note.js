@@ -1,12 +1,16 @@
 
 import React, {Component} from 'react';
 import './Note.css';
-import firebase from './Firebase';
-import './NotesLogic';
+import DeleteNoteContainer from './DeleteNoteContainer';
+
 
 class Note extends Component {
 	constructor (props) {
-	 	super (props)
+		 super (props)
+		// this.delete = this.delete.bind(this);
+		// delete() {
+		// 	deleteNote;
+		//   }
 	 	this.state = {
 	 		title: props.title,
 	 		message: props.message
@@ -23,7 +27,10 @@ class Note extends Component {
 				</section>
 
 				<button>Edit</button>
-				<button>Delete</button>
+				{/* <button>Delete</button> */}
+				{/* <button onclick={this.delete}>Delete</button> */}
+				<DeleteNoteContainer noteId={}/>
+				{/* <BtnEdit/> */}
 			</section>
 		)
 	}
