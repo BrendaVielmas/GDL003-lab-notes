@@ -4,7 +4,7 @@ import Login from './Login';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import HomeContainer from './HomeContainer';
 import PrivateRoute from './PrivateRoute';
-
+console.log("hola");
 class App extends Component {
 	render () {
 		return (
