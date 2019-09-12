@@ -1,18 +1,16 @@
 import firebase from './Firebase';
 
 export function createNote(title, message) {
-	if (message = "") {
+	if (message == "") {
 		return "Error. El mensaje no puede estar vacío";
 	}
 	let uid = firebase.auth().currentUser.uid;
-	console.log("in data.js createPost");
 	let db = firebase.firestore();
 	let day = new Date().toLocaleDateString();
-
 	return db.collection("Notes").add({
 			"title": title,
 			"message": message,
-			"noteId": uid,
+			"uid": uid,
 			"dates": day
 		})
 		.then((docRef) => {

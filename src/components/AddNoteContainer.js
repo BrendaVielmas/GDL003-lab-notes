@@ -22,6 +22,7 @@ class AddNoteContainer extends Component {
 		this.setState(currentState);
 	}
 	handleSubmit(event) {
+		console.log(this.state)
 		createNote(this.state.title, this.state.message).then((result) => {
 			console.log("note created!")
 			let currentState = this.state

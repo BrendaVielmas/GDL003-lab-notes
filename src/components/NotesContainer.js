@@ -27,11 +27,12 @@ class NotesContainer extends Component {
 	}
 
 	render () {
+		let thisComponent = this;
 		return (
 			<div className="NotesContainer">
 				{
 					this.state.notes.map(function(note) {
-						return <Note key={note.id} title={ note.data().title } message={ note.data().message }></Note>;
+						return <Note noteId={note.id} title={ note.data().title } message={ note.data().message } afterDelete={thisComponent.updateNotes} />;
 						
 					  })
 					  

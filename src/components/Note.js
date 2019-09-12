@@ -1,14 +1,13 @@
 
 import React, {Component} from 'react';
 import './Note.css';
-import DeleteNoteContainer from './DeleteNoteContainer';
 import { deleteNote } from './NotesLogic';
 import NotesLogic from './NotesLogic';
 
 
 class Note extends Component {
 	constructor (props) {
-	
+	 console.log(props.noteId)
 		 super (props)
 	 	this.state = {
 	 		title: props.title,
@@ -17,7 +16,9 @@ class Note extends Component {
 		 this.delete = this.delete.bind(this);
 	}
 	delete() {
-        deleteNote(noteId)
+        deleteNote(this.props.noteId).then(()=>{
+        	this.props.afterDelete()
+        })
     }
 	render () {
 		return (
