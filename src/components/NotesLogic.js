@@ -1,7 +1,7 @@
 import firebase from './Firebase';
 
 export function createNote(title, message) {
-	if (message == "") {
+	if (message = "") {
 		return "Error. El mensaje no puede estar vacío";
 	}
 	let uid = firebase.auth().currentUser.uid;
@@ -12,7 +12,7 @@ export function createNote(title, message) {
 	return db.collection("Notes").add({
 			"title": title,
 			"message": message,
-			"uid": uid,
+			"noteId": uid,
 			"dates": day
 		})
 		.then((docRef) => {
@@ -24,7 +24,9 @@ export function createNote(title, message) {
 }
 
 export function deleteNote(noteId) {
-	let db = firebase.firestore();
+	let db = firebase.firestore()
+	//let noteId = db.collection("Notes").doc(uid)
+	console.log(noteId);
 	return db.collection("Notes").doc(noteId).delete().then(() => {
 		console.log("Document successfully deleted!");
 	}).catch(function(error) {

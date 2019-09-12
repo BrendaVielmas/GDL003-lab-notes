@@ -2,20 +2,23 @@
 import React, {Component} from 'react';
 import './Note.css';
 import DeleteNoteContainer from './DeleteNoteContainer';
+import { deleteNote } from './NotesLogic';
+import NotesLogic from './NotesLogic';
 
 
 class Note extends Component {
 	constructor (props) {
+	
 		 super (props)
-		// this.delete = this.delete.bind(this);
-		// delete() {
-		// 	deleteNote;
-		//   }
 	 	this.state = {
 	 		title: props.title,
-	 		message: props.message
-	 	}
+			 message: props.message
+		 }
+		 this.delete = this.delete.bind(this);
 	}
+	delete() {
+        deleteNote(noteId)
+    }
 	render () {
 		return (
 			<section className="noteContainer">
@@ -25,15 +28,10 @@ class Note extends Component {
 				<section className="noteBody">
 					<p>{this.state.message}</p>
 				</section>
-
 				<button>Edit</button>
-				{/* <button>Delete</button> */}
-				{/* <button onclick={this.delete}>Delete</button> */}
-				<DeleteNoteContainer noteId={}/>
-				{/* <BtnEdit/> */}
+				<button onClick={this.delete}>Delete</button>
 			</section>
 		)
 	}
 }
-
 export default Note;

@@ -32,8 +32,11 @@ class NotesContainer extends Component {
 				{
 					this.state.notes.map(function(note) {
 						return <Note key={note.id} title={ note.data().title } message={ note.data().message }></Note>;
-                  	})
+						
+					  })
+					  
 				}
+				
 				<AddNoteContainer afterSubmit={this.updateNotes}/>
 			</div>
 		)
