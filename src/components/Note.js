@@ -2,8 +2,7 @@
 import React, {Component} from 'react';
 import './Note.css';
 import { deleteNote } from './NotesLogic';
-import NotesLogic from './NotesLogic';
-
+import EditNote from './EditNote';
 
 class Note extends Component {
 	constructor (props) {
@@ -16,7 +15,7 @@ class Note extends Component {
 		 this.delete = this.delete.bind(this);
 	}
 	delete() {
-        deleteNote(this.props.noteId).then(()=>{
+        deleteNote(this.props.noteId).then(()=> {
         	this.props.afterDelete()
         })
     }
@@ -29,7 +28,7 @@ class Note extends Component {
 				<section className="noteBody">
 					<p>{this.state.message}</p>
 				</section>
-				<button>Edit</button>
+				<EditNote/>
 				<button onClick={this.delete}>Delete</button>
 			</section>
 		)
