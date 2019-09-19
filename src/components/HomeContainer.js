@@ -8,12 +8,12 @@ class HomeContainer extends Component {
 	render () {
 		const { user, signOut } = this.props;
 		return (
-            <div>
+            <section className="homeContainer">
 	            <header>
-	            	{user ? <button onClick={signOut}>Sign out</button> : <Link to="/login">Sign in</Link>}
+	            	{user ? <button className="signOutBtn" onClick={signOut}>Sign out</button> : <Link to="/login">Sign in</Link>}
 	            </header>
 				<Route path={this.props.match.path} component={NotesContainer} />
-			</div>
+			</section>
 		)
 	}
 }
