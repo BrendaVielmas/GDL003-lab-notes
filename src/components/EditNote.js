@@ -1,32 +1,57 @@
 import React, {Component} from 'react';
-import { editNoteMessage } from './NotesLogic';
-import {editNoteTitle} from './NotesLogic';
-import NotesContainer from './NotesContainer';
-import Note from './Note';
+import { editNote } from './NotesLogic';
+
 class EditNote extends Component {
 	constructor (props) {
 
-	 console.log(props.noteId);
-		 super (props)
+	 	console.log(props);
+		super (props)
 	 	this.state = {
-	 		title: props.title,
-			 message: props.message
+	 		title: props.location.state.title,
+			 message: props.location.state.message
 		 }
-		 this.EditNote = this.EditNote.bind(this);
+		this.handleTitleChange = this.handleTitleChange.bind(this);
+		this.handleMessageChange = this.handleMessageChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-	EditNote(noteId) {
-        console.log(noteId);
-        editNoteMessage(this.props.noteId).then(()=> {
-        	this.props.afterEditNote()
-        })
-    }
+	handleTitleChange(event) {
+		let currentState = this.state
+		currentState.title = event.target.value
+		this.setState(currentState);
+	}
+
+	handleMessageChange(event) {
+		let currentState = this.state
+		currentState.message = event.target.value
+		this.setState(currentState);
+	}
+	handleSubmit(event) {
+		event.preventDefault();
+		console.log(this.state)
+		editNote(this.props.location.state.noteId, this.state.title, this.state.message).then((result) => {
+			console.log("note created!")
+			let currentState = this.state
+			currentState.title = '';
+			currentState.message = '';
+			this.setState(currentState);
+			this.props.history.push("/dashboard");
+		})
+		
+		
+	}
+	
 	render () {
-        let noteId = this.props.noteId ;
 		return (
-            <section className="EditNote">
-        <button onClick={ () => {this.EditNote(noteId)}}> Edit </button>
-        </section>
+			<form onSubmit={this.handleSubmit}>
+				<label>
+					Title:<input type="text" value={this.state.title} onChange={this.handleTitleChange} />
+				</label>
+				<label>
+					Message:<textarea value={this.state.message} onChange={this.handleMessageChange} />
+				</label>
+				<input type="submit" value="Submit" />
+			</form>
         )
     }
 }

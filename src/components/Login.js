@@ -3,7 +3,6 @@ import withFirebaseAuth from 'react-with-firebase-auth';
 import firebase from './Firebase';
 import 'firebase/auth';
 import logo from './images/home.gif';
-import Note from './Note';
 import { Redirect } from 'react-router-dom';
 
 
@@ -26,7 +25,7 @@ class Login extends Component {
 
         if (redirectToReferrer) return <Redirect to={from} />;
 
-        const { user, signOut } = this.props;
+        const { user } = this.props;
         if (user) {
             return <Redirect to="/dashboard" />
         } else {

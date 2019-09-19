@@ -2,21 +2,20 @@
 import React, {Component} from 'react';
 import './Note.css';
 import { deleteNote } from './NotesLogic';
-import EditNote from './EditNote';
+import { Link } from 'react-router-dom';
 
 class Note extends Component {
 	constructor (props) {
-	 console.log(props.noteId)
-		 super (props)
+		super (props)
 	 	this.state = {
 	 		title: props.title,
-			 message: props.message
-		 }
-		 this.delete = this.delete.bind(this);
+			message: props.message
+		}
+		this.delete = this.delete.bind(this);
 	}
 	delete() {
         deleteNote(this.props.noteId).then(()=> {
-        	this.props.afterDelete()
+        	this.props.afterDelete();
         })
     }
 	render () {
@@ -28,7 +27,14 @@ class Note extends Component {
 				<section className="noteBody">
 					<p>{this.state.message}</p>
 				</section>
-				<EditNote/>
+				<Link to={{
+					pathname: `${this.props.dashboardPath}/${this.props.noteId}/edit`,
+					state: {
+						title: this.state.title,
+						message: this.state.message,
+						noteId: this.props.noteId
+					}
+				}}>Edit</Link>
 				<button onClick={this.delete}>Delete</button>
 			</section>
 		)

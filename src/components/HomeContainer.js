@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import firebase from './Firebase';
 import NotesContainer from './NotesContainer';
 import withFirebaseAuth from 'react-with-firebase-auth';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
 class HomeContainer extends Component {
 	render () {
@@ -12,7 +12,7 @@ class HomeContainer extends Component {
 	            <header>
 	            	{user ? <button onClick={signOut}>Sign out</button> : <Link to="/login">Sign in</Link>}
 	            </header>
-				<NotesContainer />
+				<Route path={this.props.match.path} component={NotesContainer} />
 			</div>
 		)
 	}

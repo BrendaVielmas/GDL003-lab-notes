@@ -22,6 +22,7 @@ class AddNoteContainer extends Component {
 		this.setState(currentState);
 	}
 	handleSubmit(event) {
+		event.preventDefault();
 		console.log(this.state)
 		createNote(this.state.title, this.state.message).then((result) => {
 			console.log("note created!")
@@ -31,7 +32,7 @@ class AddNoteContainer extends Component {
 			this.props.afterSubmit();
 			this.setState(currentState);
 		})
-		event.preventDefault();
+	
 	}
 	render() {
 		return (

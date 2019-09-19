@@ -1,7 +1,7 @@
 import firebase from './Firebase';
 
 export function createNote(title, message) {
-	if (message == "") {
+	if (message === "") {
 		return "Error. El mensaje no puede estar vacío";
 	}
 	let uid = firebase.auth().currentUser.uid;
@@ -32,31 +32,15 @@ export function deleteNote(noteId) {
 	});
 }
 
-export function editNoteMessage(noteId, newMessage) {
+export function editNote(noteId, newTitle, newMessage) {
 	let db = firebase.firestore();
 	return db.collection("Notes").doc(noteId).set({
+		"title": newTitle,
 		"message": newMessage
 	}, {
 		merge: true
 	}).then(() => {
 		console.log("Document successfully edit!");
-		console.log(noteId);
-		console.log(newMessage);
-	}).catch(function(error) {
-		console.error("Error edit document: ", error);
-	});
-}
-
-export function editNoteTitle(noteId, newTitle) {
-	let db = firebase.firestore();
-	return db.collection("Notes").doc(noteId).set({
-		"title": newTitle
-	}, {
-		merge: true
-	}).then(() => {
-		console.log("Document successfully edit!");
-		console.log(noteId);
-		console.log(newTitle);
 	}).catch(function(error) {
 		console.error("Error edit document: ", error);
 	});
@@ -66,4 +50,15 @@ export function getNotes() {
 	let db = firebase.firestore()
 	let uid = firebase.auth().currentUser.uid;
 	return db.collection("Notes").orderBy("dates", "desc").where("uid", "==", uid).get()
+}
+
+export function getNotesSnapshot(cb) {
+	let db = firebase.firestore()
+	let uid = firebase.auth().currentUser.uid;
+	return db.collection("Notes").orderBy("dates", "desc").where("uid", "==", uid).onSnapshot(cb);
+}
+
+export function getNoteSnapshot(noteId, cb) {
+	let db = firebase.firestore()
+	db.collection("Notes").doc(noteId).onSnapshot(cb);
 }

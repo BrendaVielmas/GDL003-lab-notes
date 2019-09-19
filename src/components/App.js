@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Login from './Login';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import HomeContainer from './HomeContainer';
 import PrivateRoute from './PrivateRoute';
 class App extends Component {
