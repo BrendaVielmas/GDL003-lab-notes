@@ -41,16 +41,16 @@ class AddNoteContainer extends Component {
 	}
 	render() {
 		return (
-			<form>
+			<form className="formForEditOrAdd">
 				<label>
-					<textarea rows="10" cols="15" placeholder="Title of Note" className="inputTitle" type="text" value={this.state.title} onChange={this.handleTitleChange} />
+					<textarea rows="5" cols="35" placeholder="Title of Note" className="inputTitle" type="text" value={this.state.title} onChange={this.handleTitleChange} />
 				</label>
 				<label>
-					<textarea rows="20" cols="30" placeholder="Message of Note" className="inputMessage" type="text" value={this.state.message} onChange={this.handleMessageChange} />
+					<textarea rows="10" cols="35" placeholder="Message of Note" className="inputMessage" type="text" value={this.state.message} onChange={this.handleMessageChange} />
 				</label>
 				<section className="CreateNoteBtns">
-				<button onClick={this.handleSubmit} className="submitBtn" value="Submit"><img src={require("./images/save.jpg")}/></button>
-				<Link to="/dashboard"><img src={require("./images/back.png")}/></Link>
+				<button onClick={this.handleSubmit} className="submitBtn" value="Submit"><img src={require("./images/save.jpg")} title="Save note"/></button>
+				<Link to="/dashboard"><img src={require("./images/back.png")} title="Back"/></Link>
 				</section>
 			</form>
 		);
