@@ -1,10 +1,12 @@
 .App {
   text-align: center;
-  
 }
+
 body {
-  background-color:rgb(126, 115, 115);
+  background-color:rgb(255, 255, 255);
+  font-family:'Courgette', cursive;
 }
+
 .btn {
 	box-shadow: 0px 10px 14px -7px #276873;
 	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
@@ -15,7 +17,7 @@ body {
   display: block;
 	cursor:pointer;
 	color:#ffffff;
-  font-family:Arial;
+  font-family:'Courgette', cursive;
 	font-size:17px;
   font-weight:bold;
 	padding:13px 32px;
@@ -33,53 +35,67 @@ body {
 	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
   background-color:#408c99;
 }
-
+.notesContainer {
+  text-align: center;
+  justify-content:center;
+  display:inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.NotesContainer {
+  margin-left: auto;
+  margin-right: auto;
+  
+}
 .noteContainer {
-  text-decoration:none;
   color:#000;
-  background:#ffc;
-  display:block;  
+  background:#bfd8d2;
+  display: inline-block;  
   height:10em; 
   width:10em; 
-  padding:1em;  
+  padding:.1em;  
   margin:1em; 
- float:left;  
- font-family:Arial, Helvetica, sans-serif;
- -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
- -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
- box-shadow: 5px 5px 7px rgba(33,33,33,.7);
- -webkit-transform:rotate(-6deg);
- -o-transform:rotate(-6deg);
- -moz-transform:rotate(-6deg);
- text-decoration:none;
- -moz-transition:-moz-transform .15s linear;
- -o-transition:-o-transform .15s linear;
- -webkit-transition:-webkit-transform .15s linear;
+  
+  font-family:Arial, Helvetica, sans-serif;
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  -webkit-transform:rotate(-6deg);
+  -o-transform:rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+  text-decoration:none;
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
 }
-.noteContainer:nth-child(even){
+
+.noteContainer:nth-child(even) {
   -o-transform:rotate(4deg);
   -webkit-transform:rotate(4deg);
   -moz-transform:rotate(4deg);
   position:relative;
   top:5px;
- background:#cfc;
- }
- .noteContainer:nth-child(3n){
+  background:#fedcd2;
+}
+
+.noteContainer:nth-child(3n) {
   -o-transform:rotate(-3deg);
   -webkit-transform:rotate(-3deg);
   -moz-transform:rotate(-3deg);
   position:relative;
   top:-5px;
- background:#ccf;
- }
- .noteContainer:nth-child(5n){
+ background:#df744a;
+}
+.noteContainer:nth-child(5n){
   -o-transform:rotate(5deg);
   -webkit-transform:rotate(5deg);
   -moz-transform:rotate(5deg);
   position:relative;
   top:-10px;
- }
- .noteContainer:hover,.noteContainer:focus{
+  background:#dcb239;
+}
+.noteContainer:hover,.noteContainer:focus{
   -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
   -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
   box-shadow:10px 10px 7px rgba(0,0,0,.7);
@@ -88,23 +104,42 @@ body {
   -o-transform: scale(1.25);
   position:relative;
   z-index:5;
- }
+}
 
 .titleNote{
-  font-size:140%; 
- font-weight:bold;  
- padding-bottom:10px; 
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family:'Courgette', cursive;
+  font-size:95%; 
+  font-weight: bold;  
+  padding-bottom:10px; 
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+.messageNote{
+  max-height: 6.5rem;
+  text-align: justify;
+  padding: 0 1rem;
+  display: block;
+  overflow: hidden;
+  font-family:'Courgette', cursive;
+  font-size:95%;
+  margin-top: 0%;
+  margin-bottom: 0%;
 
 }
-.messageNote{
-  font-family:"Reenie Beanie",arial,sans-serif;
- font-size:180%;
-
+.messageNote:after {
+  content:'...';
+  position: absolute;
+  bottom: 0;
+  right: .2rem;
 }
 
 .textInLogin {
   font-weight:bold;
-  font-family:Arial;
+  font-family:'Courgette', cursive;
   font-size:17px;
 }
 .login {
@@ -114,6 +149,7 @@ body {
 
 .App-logo {
   height: 40vmin;
+  width:70vmin;
   pointer-events: none;
 }
 
@@ -129,10 +165,78 @@ body {
 }
 
 .signOutBtn {
- 
+  background-color: transparent;
+  border: transparent;
+  margin-left: 95%;
+  margin-top: .5em;
+}
+.signOutBtn:hover {
+  cursor:pointer; cursor: hand;
+}
+.btnsEditAndDelete {
+  display: block;
+  margin-left: 70%;
 }
 .deleteBtn {
+  display: inline-block;
+  background-color: transparent;
+  border: transparent;
+  padding: 0;
+}
+.deleteBtn:hover {
+  cursor:pointer; cursor: hand;
+}
+.editBtn {
+  display: inline-block;
+  background-color: transparent;
+  border: transparent;
+}
 
+.createNoteBtnPlus {
+
+  background-color: transparent;
+  border: transparent;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  height: 22px;
+  width: 22px;
+}
+
+.inputTitle{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:5px;
+  background:#dcb239;
+  border: transparent;
+  font-family:'Courgette', cursive;
+  font-size:95%; 
+}
+.inputMessage{
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+  background:#fedcd2;
+  border: transparent;
+  font-family:'Courgette', cursive;
+  font-size:95%; 
+}
+.submitBtn{
+  display: inline-block;
+  background-color: transparent;
+  border: transparent;
+}
+.submitBtn:hover{
+  cursor:pointer; cursor: hand;
+}
+.CreateNoteBtns {
+  display: block;
 }
 
 @keyframes App-logo-spin {

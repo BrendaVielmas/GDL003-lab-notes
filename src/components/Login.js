@@ -31,10 +31,11 @@ class Login extends Component {
         } else {
             return (
                 <section className="login">
+                    
                     <img src={logo} className="App-logo" alt="logo" />
                     <p className="textInLogin">Save notes, be Not-E</p>
                     <button class="btn" onClick={this.signInWithGoogle}>Sign in with Google</button>
-                    <button class="btn" onClick={this.signInWithFacebook}>Sign in with Facebook</button> 
+                    {/* <button class="btn" onClick={this.signInWithFacebook}>Sign in with Facebook</button>  */}
                 </section>
             )
         }       

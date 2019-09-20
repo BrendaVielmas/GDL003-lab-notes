@@ -6,7 +6,7 @@ export function createNote(title, message) {
 	}
 	let uid = firebase.auth().currentUser.uid;
 	let db = firebase.firestore();
-	let day = new Date().toLocaleDateString();
+	let day = new Date();
 	return db.collection("Notes").add({
 			"title": title,
 			"message": message,
@@ -46,19 +46,8 @@ export function editNote(noteId, newTitle, newMessage) {
 	});
 }
 
-export function getNotes() {
-	let db = firebase.firestore()
-	let uid = firebase.auth().currentUser.uid;
-	return db.collection("Notes").orderBy("dates", "desc").where("uid", "==", uid).get()
-}
-
 export function getNotesSnapshot(cb) {
 	let db = firebase.firestore()
 	let uid = firebase.auth().currentUser.uid;
 	return db.collection("Notes").orderBy("dates", "desc").where("uid", "==", uid).onSnapshot(cb);
-}
-
-export function getNoteSnapshot(noteId, cb) {
-	let db = firebase.firestore()
-	db.collection("Notes").doc(noteId).onSnapshot(cb);
 }

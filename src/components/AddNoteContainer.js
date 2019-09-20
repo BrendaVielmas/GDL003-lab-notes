@@ -1,5 +1,6 @@
 import { createNote } from './NotesLogic';
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class AddNoteContainer extends Component {
 	constructor(props) {
@@ -24,26 +25,33 @@ class AddNoteContainer extends Component {
 	handleSubmit(event) {
 		event.preventDefault();
 		console.log(this.state)
+		if (!this.state.title || !this.state.message) {
+			alert("title/message cannot be empty")
+			return
+		}
 		createNote(this.state.title, this.state.message).then((result) => {
 			console.log("note created!")
 			let currentState = this.state
 			currentState.title = '';
 			currentState.message = '';
-			this.props.afterSubmit();
 			this.setState(currentState);
+			this.props.history.push("/dashboard");
 		})
 	
 	}
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit}>
+			<form>
 				<label>
-					Title:<input type="text" value={this.state.title} onChange={this.handleTitleChange} />
+					<textarea rows="10" cols="15" placeholder="Title of Note" className="inputTitle" type="text" value={this.state.title} onChange={this.handleTitleChange} />
 				</label>
 				<label>
-					Message:<input type="text" value={this.state.message} onChange={this.handleMessageChange} />
+					<textarea rows="20" cols="30" placeholder="Message of Note" className="inputMessage" type="text" value={this.state.message} onChange={this.handleMessageChange} />
 				</label>
-				<input type="submit" value="Submit" />
+				<section className="CreateNoteBtns">
+				<button onClick={this.handleSubmit} className="submitBtn" value="Submit"><img src={require("./images/save.jpg")}/></button>
+				<Link to="/dashboard"><img src={require("./images/back.png")}/></Link>
+				</section>
 			</form>
 		);
 	}

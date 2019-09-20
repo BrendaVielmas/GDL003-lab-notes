@@ -13,26 +13,29 @@ class Note extends Component {
 		this.delete = this.delete.bind(this);
 	}
 	delete() {
-        deleteNote(this.props.noteId).then(()=> {
-        	this.props.afterDelete();
-        })
+        deleteNote(this.props.noteId)
     }
 	render () {
 		return (
 			<section className="noteContainer">
-				<section className="noteBody">
-					<p className="titleNote">{this.state.title}</p>
-					<p className="messageNote">{this.state.message}</p>
-				</section>
-				<Link to={{
+				<section className="btnsEditAndDelete">
+					<Link className="editBtn" to={{
 					pathname: `${this.props.dashboardPath}/${this.props.noteId}/edit`,
 					state: {
 						title: this.state.title,
 						message: this.state.message,
 						noteId: this.props.noteId
 					}
-				}}>Edit</Link>
-				<button className="deleteBtn" onClick={this.delete}>Delete</button>
+					}}><img src={require("./images/edit.png")}/></Link>
+					<button className="deleteBtn" onClick={this.delete}><img src={require("./images/close.png")}/></button>
+				</section>
+				
+				<section className="noteBody">	
+					<p className="titleNote">{this.state.title}</p>
+					<p className="messageNote">{this.state.message}</p>
+				</section>
+				
+				
 			</section>
 		)
 	}

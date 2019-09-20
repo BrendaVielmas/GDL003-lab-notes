@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { editNote } from './NotesLogic';
+import {Link} from 'react-router-dom';
 
 class EditNote extends Component {
 	constructor (props) {
@@ -29,6 +30,10 @@ class EditNote extends Component {
 	handleSubmit(event) {
 		event.preventDefault();
 		console.log(this.state)
+		if (!this.state.title || !this.state.message) {
+			alert("title/message cannot be empty")
+			return
+		}
 		editNote(this.props.location.state.noteId, this.state.title, this.state.message).then((result) => {
 			console.log("note created!")
 			let currentState = this.state
@@ -43,14 +48,17 @@ class EditNote extends Component {
 	
 	render () {
 		return (
-			<form onSubmit={this.handleSubmit}>
+			<form>
 				<label>
-					Title:<input type="text" value={this.state.title} onChange={this.handleTitleChange} />
+					<textarea rows="10" cols="15" placeholder="Title of Note" className="inputTitle" value={this.state.title} onChange={this.handleTitleChange} />
 				</label>
 				<label>
-					Message:<textarea value={this.state.message} onChange={this.handleMessageChange} />
+					<textarea rows="20" cols="30" placeholder="Message of Note" className="inputMessage" value={this.state.message} onChange={this.handleMessageChange} />
 				</label>
-				<input type="submit" value="Submit" />
+				<section className="CreateNoteBtns">
+				<button onClick={this.handleSubmit} className="submitBtn" value="Submit"><img src={require("./images/save.jpg")}/></button>
+				<Link to="/dashboard"><img src={require("./images/back.png")}/></Link>
+				</section>
 			</form>
         )
     }

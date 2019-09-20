@@ -2,17 +2,16 @@ import React, {Component} from 'react';
 import Note from './Note';
 import AddNoteContainer from './AddNoteContainer';
 import {getNotesSnapshot} from './NotesLogic';
-import { Route } from 'react-router-dom';
+import {Link, Route } from 'react-router-dom';
 import EditNote from './EditNote';
 
 class NotesContainer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { notes: [] };
-		this.updateNotes = this.updateNotes.bind(this);
 	}
 
-	updateNotes() {
+	componentDidMount() {
 		let thisComponent = this;
 		getNotesSnapshot((querySnapShot) => {
 			let notes = []
@@ -23,35 +22,29 @@ class NotesContainer extends Component {
 		})
 	}
 
-	componentDidMount() {
-		this.updateNotes();
-	}
-
 	render () {
 		let thisComponent = this;
 		return (
 			<div className="NotesContainer">
-				<Route path={`${this.props.match.path}/:noteId/edit`} render= {() => 
-					{
-						return (
-							<EditNote afterEdit={thisComponent.updateNotes} {...this.props}/>
-						)
-					} 
-				} />
+				<Route path={`${this.props.match.path}/:noteId/edit`} component={EditNote} />
 				<Route exact path={this.props.match.path} render= {() => 
 					{
 						return (
-							<section>
-							{
-								this.state.notes.map(function(note) {
-									return <Note key={note.id} dashboardPath={thisComponent.props.match.path} noteId={note.id} title={ note.data().title } message={ note.data().message } afterDelete={thisComponent.updateNotes} />;	
-								})
-							}
-							<AddNoteContainer afterSubmit={this.updateNotes}/>
+							<section className="notesContainer">
+								{
+									this.state.notes.map(function(note) {
+										return <Note key={note.id} dashboardPath={thisComponent.props.match.path} noteId={note.id} title={ note.data().title } message={ note.data().message } />;	
+									})
+								}
+								<section className="createNoteBtnPlus">
+								<Link to={`${this.props.match.path}/createNote`}><img src={require("./images/create.png")}/></Link>
+								</section>
+							
 							</section>
 						)
 					}
 				} />
+				<Route path={`${this.props.match.path}/createNote`} component={AddNoteContainer} />
 				
 			</div>
 		)
