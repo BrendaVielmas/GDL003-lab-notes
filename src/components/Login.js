@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import withFirebaseAuth from 'react-with-firebase-auth';
 import firebase from './Firebase';
 import 'firebase/auth';
-import logo from './images/home.gif';
 import { Redirect } from 'react-router-dom';
 
 
@@ -31,10 +30,30 @@ class Login extends Component {
         } else {
             return (
                 <section className="login">
-                    
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <p className="textInLogin">Save notes, be Not-E</p>
-                    <button class="btn" onClick={this.signInWithGoogle}>Sign in with Google</button>
+                    <div class="container">
+	<section id="content">
+		<form action="">
+			<h1  className="textInLogin">Save notes, be Not-E</h1>
+            <div className="btnSection">
+                <div class="social-button facebook-button"></div>
+                <div  onClick={this.signInWithGoogle} class="social-button google-button"></div>
+            </div>
+            
+			<div>
+				<input type="text" placeholder="Username" required="" id="username" />
+			</div>
+			<div>
+				<input type="password" placeholder="Password" required="" id="password" />
+			</div>
+			<div>
+				<input type="submit" value="Log in" />
+				<a href="#">Lost your password?</a>
+				<a href="#">Register</a>
+			</div>
+		</form>
+		
+	</section>
+</div>
                     {/* <button class="btn" onClick={this.signInWithFacebook}>Sign in with Facebook</button>  */}
                 </section>
             )
