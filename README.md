@@ -11,7 +11,6 @@
 
 ## Preámbulo
 
-![Shows CRUD functionalities](https://raw.githubusercontent.com/florenciasilva/lab-notes/master/demo-crud.gif?token=AGJBHNTVAQRWOVF2IGMP6FK5NVFAS)
 
 
 No existe día que no tomemos notas, siempre necesitamos apuntar alguna dirección, número telefónico, algunos notas de alguna reunión, o hasta guardar nuestras URLs favoritas para  poder consultarlas más tarde. Muchas veces para esta actividad utilizamos libretas o agendas que terminan siendo olvidadas, se guardan en algún mensaje de texto o hasta terminando siendo escritas en la palma de nuestra mano.
