@@ -3,7 +3,6 @@
 }
 
 body {
-  background-color:rgb(255, 255, 255);
   font-family:'Courgette', cursive;
 }
 
@@ -117,6 +116,10 @@ body {
   margin-bottom: 20px;
   margin-top: 100px;
 }
+.loginImg {
+ width: 20%;
+ height: 20%;
+}
 
 .App-logo {
   height: 40vmin;
@@ -222,16 +225,6 @@ img:hover {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -250,7 +243,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	background: transparent;
 }
 body {
-	background: #DCDDDF url(https://cssdeck.com/uploads/media/items/7/7AF2Qzt.png);
+	background-image: url(http://www.sanantonio.eus/wp-content/blogs.dir/4/files/2017/03/textura-corcho.jpg);
 	color: #000;
 	font: 14px Arial;
 	margin: 0 auto;

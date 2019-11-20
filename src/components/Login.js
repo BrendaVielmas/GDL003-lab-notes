@@ -3,6 +3,7 @@ import withFirebaseAuth from 'react-with-firebase-auth';
 import firebase from './Firebase';
 import 'firebase/auth';
 import { Redirect, Link } from 'react-router-dom';
+import Logo from "./images/note.png";
 
 
 class Login extends Component {
@@ -22,6 +23,7 @@ class Login extends Component {
         } else {
             return (
                 <section className="login">
+                       <img className="loginImg" src={Logo}/> 
                     <div class="container">
                         <section id="content">
                             <form action="">
