@@ -23,14 +23,14 @@ class Login extends Component {
         } else {
             return (
                 <section className="login">
-                       <img className="loginImg" src={Logo}/> 
+                       <div><img className="loginImg" src={Logo}/></div> 
                     <div class="container">
                         <section id="content">
                             <form action="">
                                 <h1  className="textInLogin">Login to Not-E with:</h1>
                                 <div className="btnSection">
                                     <div onClick={signInWithFacebook} class="social-button facebook-button"></div>
-                                    <div  onClick={signInWithGoogle} class="social-button google-button"></div>
+                                    <div onClick={signInWithGoogle} class="social-button google-button"></div>
                                 </div>
                                 <div><h1 className="textInLogin">Or</h1></div>
                                 <div>

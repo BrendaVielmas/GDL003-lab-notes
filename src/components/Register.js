@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'firebase/auth';
 import { Link } from 'react-router-dom';
+import withFirebaseAuth from 'react-with-firebase-auth';
 
 class Register extends Component {
     state = { redirectToReferrer: false };
@@ -14,7 +15,7 @@ class Register extends Component {
                             <form action="">
                                 <h1  className="textInLogin">Register in Not-E with:</h1>
                                 <div className="btnSection">
-                                    <div  class="social-button facebook-button"></div>
+                                    <div onClick={signInWithFacebook} class="social-button facebook-button"></div>
                                     <div   class="social-button google-button"></div>
                                 </div>
                                 <div><h1 className="textInLogin">Or</h1></div>
@@ -36,4 +37,12 @@ class Register extends Component {
             )
         }       
     }
-    export default Register;
+const firebaseAppAuth = firebase.auth();
+const providers = {
+    googleProvider : new firebase.auth.GoogleAuthProvider(),
+    facebookProvider : new firebase.auth.FacebookAuthProvider(),
+};
+    export default withFirebaseAuth({
+        providers,
+        firebaseAppAuth,
+    })(Register);
