@@ -26,8 +26,8 @@ class Note extends Component {
 						message: this.state.message,
 						noteId: this.props.noteId
 					}
-					}}><img src={require("./images/edit.png")} title="Edit"/></Link>
-					<button className="deleteBtn" onClick={this.delete}><img src={require("./images/close.png")} title="Delete"/></button>
+					}}><img  alt="" src={require("./images/edit.png")} title="Edit"/></Link>
+					<button className="deleteBtn" onClick={this.delete}><img alt="" src={require("./images/close.png")} title="Delete"/></button>
 				</section>
 				<section className="noteBody">	
 					<p className="titleNote">{this.state.title}</p>

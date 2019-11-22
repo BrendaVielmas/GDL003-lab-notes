@@ -10,7 +10,7 @@ class HomeContainer extends Component {
 		return (
             <section className="homeContainer">
 	            <header>
-	            	{user ? <button className="signOutBtn" onClick={signOut}><img src={require("./images/signout.png")} title="Sign out"/></button> : <Link to="/login">Sign in</Link>}
+	            	{user ? <button className="signOutBtn" onClick={signOut}><img  alt="" src={require("./images/signout.png")} title="Sign out"/></button> : <Link to="/login">Sign in</Link>}
 	            </header>
 				<Route path={this.props.match.path} component={NotesContainer} />
 			</section>

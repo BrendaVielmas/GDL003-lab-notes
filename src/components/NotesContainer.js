@@ -37,7 +37,7 @@ class NotesContainer extends Component {
 									})
 								}
 								<section className="createNoteBtnPlus">
-								<Link to={`${this.props.match.path}/createNote`}><img src={require("./images/create.png")} title="Add new note"/></Link>
+								<Link to={`${this.props.match.path}/createNote`}><img alt="" src={require("./images/create.png")} title="Add new note"/></Link>
 								</section>
 							
 							</section>
