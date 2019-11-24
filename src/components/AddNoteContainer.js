@@ -50,7 +50,7 @@ class AddNoteContainer extends Component {
 				</label>
 				<section className="CreateNoteBtns">
 				<button onClick={this.handleSubmit} className="submitBtn" value="Submit"><img  alt="" src={require("./images/save.jpg")} title="Save note"/></button>
-				<Link to="/dashboard"><img alt="" src={require("./images/back.png")} title="Back"/></Link>
+				<Link to="/dashboard"><img className="backBtn" alt="" src={require("./images/back.png")} title="Back"/></Link>
 				</section>
 			</form>
 		);
