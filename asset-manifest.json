@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/GDL003-lab-notes/static/css/main.0e65991d.chunk.css",
-    "main.js": "/GDL003-lab-notes/static/js/main.f1d8dad1.chunk.js",
-    "main.js.map": "/GDL003-lab-notes/static/js/main.f1d8dad1.chunk.js.map",
-    "runtime~main.js": "/GDL003-lab-notes/static/js/runtime~main.1b8fc5ae.js",
-    "runtime~main.js.map": "/GDL003-lab-notes/static/js/runtime~main.1b8fc5ae.js.map",
-    "static/js/2.78705b61.chunk.js": "/GDL003-lab-notes/static/js/2.78705b61.chunk.js",
-    "static/js/2.78705b61.chunk.js.map": "/GDL003-lab-notes/static/js/2.78705b61.chunk.js.map",
-    "index.html": "/GDL003-lab-notes/index.html",
-    "precache-manifest.c2c58b5ca0f3277f34b2d99a46656118.js": "/GDL003-lab-notes/precache-manifest.c2c58b5ca0f3277f34b2d99a46656118.js",
-    "service-worker.js": "/GDL003-lab-notes/service-worker.js",
-    "static/css/main.0e65991d.chunk.css.map": "/GDL003-lab-notes/static/css/main.0e65991d.chunk.css.map",
-    "static/media/close.png": "/GDL003-lab-notes/static/media/close.460aff92.png",
-    "static/media/create.png": "/GDL003-lab-notes/static/media/create.5638aeff.png",
-    "static/media/edit.png": "/GDL003-lab-notes/static/media/edit.a3da6e30.png",
-    "static/media/save.jpg": "/GDL003-lab-notes/static/media/save.f75af178.jpg",
-    "static/media/signout.png": "/GDL003-lab-notes/static/media/signout.43d7cf2b.png"
+    "main.css": "/Not-E/static/css/main.0e65991d.chunk.css",
+    "main.js": "/Not-E/static/js/main.b83b3681.chunk.js",
+    "main.js.map": "/Not-E/static/js/main.b83b3681.chunk.js.map",
+    "runtime~main.js": "/Not-E/static/js/runtime~main.70499717.js",
+    "runtime~main.js.map": "/Not-E/static/js/runtime~main.70499717.js.map",
+    "static/js/2.6abc5a3e.chunk.js": "/Not-E/static/js/2.6abc5a3e.chunk.js",
+    "static/js/2.6abc5a3e.chunk.js.map": "/Not-E/static/js/2.6abc5a3e.chunk.js.map",
+    "index.html": "/Not-E/index.html",
+    "precache-manifest.82a761d52393d8a9e4f010f0999e7680.js": "/Not-E/precache-manifest.82a761d52393d8a9e4f010f0999e7680.js",
+    "service-worker.js": "/Not-E/service-worker.js",
+    "static/css/main.0e65991d.chunk.css.map": "/Not-E/static/css/main.0e65991d.chunk.css.map",
+    "static/media/close.png": "/Not-E/static/media/close.460aff92.png",
+    "static/media/create.png": "/Not-E/static/media/create.5638aeff.png",
+    "static/media/edit.png": "/Not-E/static/media/edit.a3da6e30.png",
+    "static/media/save.jpg": "/Not-E/static/media/save.f75af178.jpg",
+    "static/media/signout.png": "/Not-E/static/media/signout.43d7cf2b.png"
   }
 }
