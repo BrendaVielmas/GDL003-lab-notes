@@ -49,8 +49,8 @@ class AddNoteContainer extends Component {
 					<textarea rows="10" cols="35" placeholder="Message of Note" className="inputMessage" type="text" value={this.state.message} onChange={this.handleMessageChange} />
 				</label>
 				<section className="CreateNoteBtns">
-				<button onClick={this.handleSubmit} className="submitBtn" value="Submit"><img src={require("./images/save.jpg")} title="Save note"/></button>
-				<Link to="/dashboard"><img src={require("./images/back.png")} title="Back"/></Link>
+				<button onClick={this.handleSubmit} className="submitBtn" value="Submit"><img  alt="" src={require("./images/save.jpg")} title="Save note"/></button>
+				<Link to="/dashboard"><img className="backBtn" alt="" src={require("./images/back.png")} title="Back"/></Link>
 				</section>
 			</form>
 		);

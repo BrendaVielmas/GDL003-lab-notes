@@ -4,8 +4,18 @@
 
 body {
   font-family:'Courgette', cursive;
+    color: #000;
+    font: 14px Arial;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    background-color: rgba(223, 199, 180, 0.521);
 }
-
+.loginImgHome{
+  float: left;
+  width: 30%;
+  height: 30%;
+}
 .notesContainer {
   text-align: center;
   justify-content:center;
@@ -17,7 +27,7 @@ body {
 .NotesContainer {
   margin-left: auto;
   margin-right: auto;
-  
+  padding-top: 20%;
 }
 .noteContainer {
   color:#000;
@@ -89,6 +99,7 @@ body {
 }
 
 .messageNote{
+  height: 52px;
   max-height: 6.5rem;
   text-align: justify;
   padding: 0 1rem;
@@ -98,33 +109,28 @@ body {
   font-size:95%;
   margin-top: 0%;
   margin-bottom: 0%;
+  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap;
+}
 
-}
-.messageNote:after {
-  content:'...';
-  position: absolute;
-  bottom: 0;
-  right: .2rem;
-}
 
 .textInLogin {
   font-weight:bold;
   font-family:'Courgette', cursive;
   font-size:17px;
+  padding-top: 10px;
 }
 .login {
-  margin-bottom: 20px;
-  margin-top: 100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.login button {
+  margin-left: 80px;
 }
 .loginImg {
- width: 15%;
- height: 15%;
-}
-
-.App-logo {
-  height: 40vmin;
-  width:70vmin;
-  pointer-events: none;
+ width: 50%;
+ height: 50%;
 }
 
 .App-header {
@@ -141,8 +147,10 @@ body {
 .signOutBtn {
   background-color: transparent;
   border: transparent;
-  margin-left: 95%;
+  float: right;
   margin-top: .5em;
+  width: 20%;
+  height: 20%;
 }
 .signOutBtn:hover {
   cursor:pointer; cursor: hand;
@@ -157,6 +165,10 @@ body {
   border: transparent;
   padding: 0;
 }
+.deleteBtn img{
+  width: 35%;
+  height: 35%;
+}
 .deleteBtn:hover {
   cursor:pointer; cursor: hand;
 }
@@ -165,25 +177,20 @@ body {
   background-color: transparent;
   border: transparent;
 }
-
-.createNoteBtnPlus {
-
-  background-color: transparent;
-  border: transparent;
-  margin-left: auto;
-  margin-right: auto;
+.signOutBtn img {
+  height: 72%;
+  width: 72%;
 }
-
-img {
-  height: 22px;
-  width: 22px;
+.createNoteBtnPlus img {
+  height: 17%;
+  width: 17%;
+  
 }
 
 .formForEditOrAdd{
   display: inline-block;
 }
 .inputTitle{
-  display: block;
   -o-transform:rotate(4deg);
   -webkit-transform:rotate(4deg);
   -moz-transform:rotate(4deg);
@@ -196,7 +203,6 @@ img {
   padding: 1em;
 }
 .inputMessage{
-  display: block;
   -o-transform:rotate(-3deg);
   -webkit-transform:rotate(-3deg);
   -moz-transform:rotate(-3deg);
@@ -208,10 +214,24 @@ img {
   font-size:95%; 
   padding: 1em;
 }
+.editBtnPen{
+  width: 45%;
+  height: 45%;
+}
 .submitBtn{
   display: inline-block;
   background-color: transparent;
   border: transparent;
+  width: 15%;
+  
+}
+.submitBtn img{
+  width: 100%;
+  height: 100%;
+}
+.backBtn{
+  width: 15%;
+  height: 15%;
 }
 .submitBtn:hover{
   cursor:pointer; cursor: hand;
@@ -221,31 +241,6 @@ img {
 }
 
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
-}
-body {
-	background-image: url(http://www.sanantonio.eus/wp-content/blogs.dir/4/files/2017/03/textura-corcho.jpg);
-	color: #000;
-	font: 14px Arial;
-	margin: 0 auto;
-	padding: 0;
-	position: relative;
-}
 h1{ font-size:28px;}
 h2{ font-size:26px;}
 h3{ font-size:18px;}
@@ -262,14 +257,23 @@ a:hover{ text-decoration: underline; }
 .alignleft { float: left; margin-right: 15px; }
 .alignright { float: right; margin-left: 15px; }
 .clearfix:after,
-form:after {
+.form:after {
 	content: ".";
 	display: block;
 	height: 0;
 	clear: both;
 	visibility: hidden;
 }
-.container { margin: 25px auto; position: relative; width: 900px; }
+.container { 
+  margin-left:10%;
+  position: relative; 
+  width: 100px; 
+  top: -40px;
+  padding: 0;
+ }
+.lostPassword{
+  margin-top: 20%;
+}
 #content {
 	background: #f9f9f9;
 	background: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);
@@ -284,12 +288,11 @@ form:after {
 	-o-box-shadow: 0 1px 0 #fff inset;
 	box-shadow: 0 1px 0 #fff inset;
 	border: 1px solid #c4c6ca;
-	margin: 0 auto;
-	padding: 25px 0 0;
+  margin-right: 0;
 	position: relative;
 	text-align: center;
 	text-shadow: 0 1px 0 #fff;
-	width: 400px;
+	width: 280px;
 }
 #content h1:before,
 #content h1:after {
@@ -352,9 +355,9 @@ form:after {
 	top: 0;
 	z-index: -2;
 }
-#content form { margin: 0 20px; position: relative }
-#content form input[type="text"],
-#content form input[type="password"] {
+#content .form { margin: 0 20px; position: relative }
+#content .form input[type="text"],
+#content .form input[type="password"], .inputReset {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
@@ -378,8 +381,8 @@ form:after {
 	padding: 15px 10px 15px 40px;
 	width: 80%;
 }
-#content form input[type="text"]:focus,
-#content form input[type="password"]:focus {
+#content .form input[type="text"]:focus,
+#content .form input[type="password"]:focus  {
 	-webkit-box-shadow: 0 0 2px #ed1c24 inset;
 	-moz-box-shadow: 0 0 2px #ed1c24 inset;
 	-ms-box-shadow: 0 0 2px #ed1c24 inset;
@@ -389,9 +392,12 @@ form:after {
 	border: 1px solid #ed1c24;
 	outline: none;
 }
+.resetP{
+  height: 220px;
+}
 #username { background-position: 10px 10px !important }
 #password { background-position: 10px -53px !important }
-#content form input[type="submit"] {
+.register, .logIn {
 	background: rgb(254,231,154);
 	background: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);
 	background: -webkit-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);
@@ -420,7 +426,7 @@ form:after {
 	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
 	width: 120px;
 }
-#content form input[type="submit"]:hover {
+#content .form input[type="submit"]:hover {
 	background: rgb(254,193,81);
 	background: -moz-linear-gradient(top,  rgba(254,193,81,1) 0%, rgba(254,231,154,1) 100%);
 	background: -webkit-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);
@@ -429,11 +435,11 @@ form:after {
 	background: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );
 }
-#content form div a {
+#content .form div a, .ObjA {
 	color: #004a80;
     float: right;
-    font-size: 12px;
-    margin: 30px 15px 0 0;
+    font-size: 14px;
+    margin: 10px 35px 10px 0;
     text-decoration: underline;
 }
 .button {
@@ -475,15 +481,6 @@ form:after {
 }
 
 
-
-
-
-
-
-
-
-
-
 .btnSection{
   display: inline-flex;
 }
@@ -492,10 +489,10 @@ form:after {
 .social-button {
   font-size: 18px;
   color: #fff;
-  height: 60px;
-  width: 150px;
+  height: 30px;
+  width: 30px;
   line-height: 52px;
-  margin:4px;
+  margin:4px 40px 4px 4px;
   border: 3px solid #eee;
   cursor: pointer;
 }
@@ -557,26 +554,120 @@ form:after {
   background-color: #ce3e26;
 }
 
-@media only screen and (max-width: 767px)
+@media only screen and (min-width: 767px) and (max-width: 1024px)
 {
-  .noteContainer {
-    height:9em; 
-    width:9em; 
-    padding:.05em;  
-    margin:.5em; 
+  .login {
+    width: 100%;
+    height: 100%;
   }
-  .signOutBtn {
-    
-    margin-left: 80%;
-    
+  .inputMessage, .inputTitle{
+    font-size: 30px;
+    width: 410px;
+    height: 350px;
+  }
+  .signOutBtn img{
+  height: 52%;
+  width: 52%;
+  }
+  .noteContainer{
+    width: 310px;
+    height: 310px;
+  }
+  .titleNote, .messageNote{
+    font-size: 22px;
+  }
+  .formForEditOrAdd{
+    width: 70%;
+  }
+  .NotesContainer{
+    padding-top: 30%;
+  }
+  .loginImg {
+    width: 40%;
+    height: 40%;
+    margin-right: 10%;
+   }
+   #content {
+    width: 500px;
+  }
+  .container {
+    margin-left: 20%;
+    top: 0;
+  }
+  .social-button {
+    height: 60px;
+    width: 150px;
+    margin:4px;
+  }
+  .login button {
+    margin-left: 0;
+  }
+  #username, #password, .logIn{
+    font-size: 22px !important;
+  }
+  #content .form div a {
+      font-size: 22px;
+  }
+  .ObjA, .textInLogin{
+    font-size: 24px; 
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px)
+.resetP{
+  height: 310px;
+}
+@media only screen and (min-width: 1025px)
 {
-  .signOutBtn {
-    
-    margin-left: 85%;
-    
+  .inputMessage, .inputTitle{
+    font-size: 30px;
+    width: 410px;
+    height: 350px;
   }
+  .titleNote, .messageNote{
+    font-size: 22px;
+  }
+  .signOutBtn img{
+    height: 22%;
+    width: 22%;
+    }
+    .noteContainer{
+      width: 270px;
+      height: 270px;
+    }
+    .submitBtn, .backBtn {
+      width: 10%;
+      height: 10%;
+    }
+    .loginImgHome{
+      float: left;
+      width: 10%;
+      height: 10%;
+    }
+    .NotesContainer{
+      padding-top: 10%;
+    }
+    .loginImg {
+      width: 20%;
+      height: 20%;
+     }
+     #content {
+      margin: 0 auto; 
+      width: 400px;
+    }
+    .container {width: 80%; top: 0;}
+    .social-button {
+      height: 60px;
+      width: 150px;
+      margin:4px;
+    }
+    .login button {
+      margin-left: 0;
+    }
+    #content .form div a {
+      color: #004a80;
+        float: right;
+        font-size: 12px;
+        margin: 30px 15px 0 0;
+        text-decoration: underline;
+    }
 }

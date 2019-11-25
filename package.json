@@ -2,7 +2,7 @@
   "name": "labnotes003",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://brendavielmas.github.io/GDL003-lab-notes/",
+  "homepage": "https://brendavielmas.github.io/Not-E/",
   "dependencies": {
     "firebase": "^6.5.0",
     "gh-pages": "^2.1.1",

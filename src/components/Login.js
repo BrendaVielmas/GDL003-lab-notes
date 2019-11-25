@@ -7,13 +7,25 @@ import Logo from "./images/note.png";
 
 
 class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { 
+            email: '', 
+            password: ''};
+      }
     state = { redirectToReferrer: false };
-
+    myChangeHandler = (event) => {
+        this.setState({email: event.target.value});
+      }
+    myChangeHandler2 = (event) => { 
+    this.setState({password: event.target.value});
+    }
     render() {
         const {
             user,
             signInWithFacebook,
-            signInWithGoogle
+            signInWithGoogle,
+            signInWithEmailAndPassword
         } = this.props;
         let { from } = this.props.location.state || { from: { pathname: "/" } };
         let { redirectToReferrer } = this.state;
@@ -23,28 +35,29 @@ class Login extends Component {
         } else {
             return (
                 <section className="login">
-                       <div><img className="loginImg" src={Logo}/></div> 
-                    <div class="container">
+                       <img className="loginImg"  alt="" src={Logo}/> 
+                    <div className="container">
                         <section id="content">
-                            <form action="">
+                            <div className="form">
                                 <h1  className="textInLogin">Login to Not-E with:</h1>
                                 <div className="btnSection">
-                                    <div onClick={signInWithFacebook} class="social-button facebook-button"></div>
-                                    <div onClick={signInWithGoogle} class="social-button google-button"></div>
+                                    <div onClick={signInWithFacebook} className="social-button facebook-button"></div>
+                                    <div onClick={signInWithGoogle} className="social-button google-button"></div>
+
                                 </div>
                                 <div><h1 className="textInLogin">Or</h1></div>
                                 <div>
-                                    <input type="text" placeholder="Write your Email Address" required="" id="username" />
+                                    <input type="text" onChange={this.myChangeHandler} placeholder="Write your Email Address" required="" id="username" />
                                 </div>
                                 <div>
-                                    <input type="password" placeholder="Write your Password" required="" id="password" />
+                                    <input type="password" onChange={this.myChangeHandler2} placeholder="Write your Password" required="" id="password" />
                                 </div>
                                 <div>
-                                    <input type="submit" value="Log in" />
+                                    <button className="logIn" onClick={() =>{ signInWithEmailAndPassword(this.state.email, this.state.password)}}>Log in</button>
                                     <Link to="/reset-password">Lost your password?</Link>
                                     <Link to="/register">Register</Link>
                                 </div>
-                            </form>
+                            </div>
                         </section>
                     </div>
                 </section>
