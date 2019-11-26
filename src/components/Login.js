@@ -35,6 +35,7 @@ class Login extends Component {
         } else {
             return (
                 <section className="login">
+                     <section class="demoBox"> Try with Email: to.demo.example@gmail.com<br/> Password: ToDemoExample123</section>
                        <img className="loginImg"  alt="" src={Logo}/> 
                     <div className="container">
                         <section id="content">
