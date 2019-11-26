@@ -11,13 +11,6 @@ body {
     position: relative;
     background-color: rgba(122, 204, 150, 0.637);
 }
-.demoBox{
-  float: inline-end;
-  width: 70%;
-  border: solid rgb(255, 255, 255);
-  margin-left: auto;
-  margin-right: auto;
-}
 .loginImgHome{
   float: left;
   width: 30%;

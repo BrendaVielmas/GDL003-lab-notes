@@ -35,7 +35,6 @@ class Login extends Component {
         } else {
             return (
                 <section className="login">
-                     <section class="demoBox"> Try with Email: to.demo.example@gmail.com<br/> Password: ToDemoExample123</section>
                        <img className="loginImg"  alt="" src={Logo}/> 
                     <div className="container">
                         <section id="content">
@@ -48,10 +47,10 @@ class Login extends Component {
                                 </div>
                                 <div><h1 className="textInLogin">Or</h1></div>
                                 <div>
-                                    <input type="text" onChange={this.myChangeHandler} placeholder="Write your Email Address" required="" id="username" />
+                                    <input type="text" onChange={this.myChangeHandler} placeholder="Write your Email Address" value="to.demo.example@gmail.com" required="" id="username" />
                                 </div>
                                 <div>
-                                    <input type="password" onChange={this.myChangeHandler2} placeholder="Write your Password" required="" id="password" />
+                                    <input type="password" onChange={this.myChangeHandler2} placeholder="Write your Password" value="ToDemoExample123" required="" id="password" />
                                 </div>
                                 <div>
                                     <button className="logIn" onClick={() =>{ signInWithEmailAndPassword(this.state.email, this.state.password)}}>Log in</button>
