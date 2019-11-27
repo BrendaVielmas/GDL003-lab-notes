@@ -9,7 +9,7 @@ body {
     margin: 0 auto;
     padding: 0;
     position: relative;
-    background-color: rgba(122, 204, 150, 0.637);
+    background-color: rgba(228, 170, 153, 0.637);
 }
 .loginImgHome{
   float: left;
@@ -355,7 +355,10 @@ a:hover{ text-decoration: underline; }
 	top: 0;
 	z-index: -2;
 }
-#content .form { margin: 0 20px; position: relative }
+#content .form { 
+  margin: 0 20px; 
+  position: relative 
+}
 #content .form input[type="text"],
 #content .form input[type="password"], .inputReset {
 	-webkit-border-radius: 3px;
@@ -373,7 +376,7 @@ a:hover{ text-decoration: underline; }
 	-ms-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
-	background: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;
+	background-color: #c4a9e9bb;
 	border: 1px solid #c8c8c8;
 	color: #777;
 	font: 13px Helvetica, Arial, sans-serif;
