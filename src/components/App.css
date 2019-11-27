@@ -31,7 +31,7 @@ body {
 }
 .noteContainer {
   color:#000;
-  background:#bfd8d2;
+  background:#b955b9;
   display: inline-block;  
   height:10em; 
   width:10em; 
@@ -56,7 +56,7 @@ body {
   -moz-transform:rotate(4deg);
   position:relative;
   top:5px;
-  background:#fedcd2;
+  background:#868080;
 }
 
 .noteContainer:nth-child(3n) {
